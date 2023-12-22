@@ -97,7 +97,7 @@ class BinarySearchTree {
     if (node.left === null) return node.right;                    // один потомок
     if (node.right === null) return node.left;                    //
 
-                            //////////////// два потомка //////////////////////////////////////
+                            ////////////////////////////////////// два потомка //////////////////////////////////////
     node.data = this.minNode(node.right).data;                                        /// изменяем значение узла на минимальное из правой ветки node
     node.right = this.removeNode(this.minNode(node.right).data, node.right);          // запускаем удаление узла с минимальным значением из правой ветки node
     return node;
@@ -112,7 +112,7 @@ class BinarySearchTree {
     while (node.left != null) node = node.left;
     return node;
   }
-///////////////////////////////////////////
+  ///////////////////////////////////////////
 
   max(node = this.rootNode) {
     while (node.right != null) node = node.right;
@@ -120,26 +120,6 @@ class BinarySearchTree {
   }
 }
 
-const tree = new BinarySearchTree();
-tree.add(2);
-tree.add(7);
-tree.add(1);
-tree.add(8);
-tree.add(4);
-tree.add(32);
-tree.add(12);
-tree.add(14);
-// console.log(tree.searchNode(tree.rootNode, 1))
-console.log(tree);
-
-console.log(tree.remove(8));
-
-console.log(tree);
-
-
-// console.log(tree.find(2).data, 2);
-// console.log(tree.find(32).data, 32);
-// console.log(tree.find(14).data, 14);
 
 
 module.exports = {
